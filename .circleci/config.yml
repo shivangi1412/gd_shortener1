@@ -8,13 +8,13 @@ workflows:
   test:
     jobs:
      
-      - test-2.7
+      - test-3.8
 
 jobs:
   build-aarch64:
     strategy:
       matrix:
-        pyver: [ cp36-cp36 ]
+        pyver: [ cp38-cp38 ]
       fail-fast: false
     runs-on: ubuntu-latest
     env:
@@ -52,7 +52,7 @@ jobs:
             pip install nose
             nosetests
 
-  test-2.7:
+  test-3.8:
     docker:
       - image: circleci/python:2.7
 

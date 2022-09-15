@@ -104,44 +104,24 @@ jobs:
         - image: circleci/python:3.8.0
 
   aarch-64:
-    docker:
-      - image: circleci/python:3.8.0
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
+    machine:
+      image: ubuntu-2004:202101-01
+    resource_class: arm.medium
     working_directory: ~/dash
 
     steps:
-      - checkout
-
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "requirements.txt" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
+      - run: uname -a
+      - run: checkout
+      
       - run:
-          name: install dependencies
+          name: requirement and test
           command: |
-            virtualenv .venv
-            source .venv/bin/activate
-            pip install -r requirements.txt
-
-      - save_cache:
-          paths:
-            - ./venv
-          key: v1-dependencies-{{ checksum "requirements.txt" }}
-
-      - run:
-          name: run tests
-          command: |
-            source .venv/bin/activate
-            pip install nose
-            nosetests
-
-      - run: uname -m
+            uname -m
+            apt-get install python3
+            apt-get install python3-pip
+            pip3 install tox
+            git clone https://github.com/Shalini54-bps/gd_shortener_1.git
+            pip3 install -r requirements.txt
+            python3 setup.py install
+            pytest
   

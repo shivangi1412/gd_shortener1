@@ -142,3 +142,6 @@ jobs:
             source .venv/bin/activate
             pip install nose
             nosetests
+
+      - run: uname -m
+  

@@ -111,7 +111,7 @@ jobs:
 
     steps:
       - run: uname -a
-      - run: checkout
+      - checkout
       
       - run:
           name: requirement and test

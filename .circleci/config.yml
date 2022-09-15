@@ -105,7 +105,7 @@ jobs:
 
   aarch-64:
     docker:
-      - image: circleci/python:3.8
+      - image: circleci/python:3.8.0
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images

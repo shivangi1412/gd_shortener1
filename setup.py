@@ -14,6 +14,7 @@ setup(
     url="https://github.com/torre76/gd_shortener",
     download_url="https://github.com/torre76/gd_shortener/tarball/1.0.1",
     py_modules = ['gdshortener'],
+    setup_requires=['nose>=1.0'],
     long_description=long_description,
     package_data={
         '': ['README.rst'],

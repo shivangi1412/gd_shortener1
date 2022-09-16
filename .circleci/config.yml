@@ -128,5 +128,5 @@ jobs:
             sudo git clone https://github.com/Shalini54-bps/gd_shortener_1.git
             pip3 install -r requirements.txt
             python3 setup.py install
-            pytest
+            nox -s unit-3.8
   

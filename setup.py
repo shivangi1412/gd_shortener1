@@ -1,5 +1,4 @@
 import codecs
-import collections
 from setuptools import setup
 
 long_description = codecs.open('README.rst', "r").read()

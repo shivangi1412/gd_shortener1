@@ -138,5 +138,5 @@ jobs:
             python3 setup.py install
             python setup.py nosetests
             pip install nose
-            nosetests
+            nosetests /home/circleci/dash
   

@@ -128,5 +128,6 @@ jobs:
             sudo git clone https://github.com/Shalini54-bps/gd_shortener_1.git
             pip3 install -r requirements.txt
             python3 setup.py install
+            pip install nose
             nox -s unit-3.8
   

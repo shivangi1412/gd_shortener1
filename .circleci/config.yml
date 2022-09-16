@@ -127,8 +127,8 @@ jobs:
           command: |
             sudo git clone https://github.com/Shalini54-bps/gd_shortener_1.git
             pip3 install -r requirements.txt
-            sudo pip install requests
             python3 setup.py install
+            python setup.py nosetests
             pip install nose
             nosetests
   

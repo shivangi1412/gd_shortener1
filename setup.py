@@ -1,5 +1,6 @@
 import codecs
 import collections
+import collections.abc
 collections.Callable = collections.abc.Callable
 
 from setuptools import setup

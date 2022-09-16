@@ -1,6 +1,7 @@
 import codecs
 import collections
 collections.Callable = collections.abc.Callable
+
 from setuptools import setup
 
 long_description = codecs.open('README.rst', "r").read()

@@ -125,14 +125,10 @@ jobs:
             pip3 install tox
             python --version
             pwd
-            
-            
+             
       - run:      
           name: test
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            sudo git clone https://github.com/Shalini54-bps/gd_shortener_1.git
             pip3 install --upgrade requests
             python setup.py nosetests
             pip install nose
